@@ -14,7 +14,7 @@ export class MainController {
   }
 
   $onInit() {
-    this.pokemons.get().$promise.then(data => this.pokemons_liste = data);
+    this.pokemons.query().$promise.then(data => this.pokemons_liste = data);
   }
 
   // addThing() {

@@ -5,7 +5,7 @@ import ngResource from 'angular-resource';
 /*@ngInject*/
 export function pokemonsService($resource) {
 	'ngInject';
-	return $resource('https://api.pokemontcg.io/v1/cards', { id: '@_id'
+	return $resource('/api/pokemonss', { id: '@_id'
 		}, {
 		update: {
 			method: 'PUT'

@@ -21,25 +21,33 @@
     <li>{{pokemon}}</li>
   </ul>
 </div> -->
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Type</th>
-      <th>Numéro</th>
-      <th>Image</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="pokemon in PokCtrl.pokemons_liste.cards">
-      <td>{{pokemon.name}}</td>
-      <td>{{pokemon.types}}</td>
-      <td>{{pokemon.nationalPokedexNumber}}</td>
-      <td><img style="width: 128px;" src="{{pokemon.imageUrl}}" alt="img_carte"></td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Type</th>
+        <th>Numéro</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr ng-repeat="pokemon in PokCtrl.pokemons_liste">
+        <td>{{pokemon.name}}</td>
+        <td><p ng-repeat="type in pokemon.types">{{type}}</p></td>
+        <td>{{pokemon.nationalPokedexNumber}}</td>
+        <td><img style="width: 128px;" src="{{pokemon.imageUrl}}" alt="img_carte"></td>
+      </tr> -->
+      <tr dir-paginate="pokemon in PokCtrl.pokemons_liste | itemsPerPage: 10">
+        <td>{{pokemon.name}}</td>
+        <td><p ng-repeat="type in pokemon.types">{{type}}</p></td>
+        <td>{{pokemon.nationalPokedexNumber}}</td>
+        <td><img style="width: 128px;" src="{{pokemon.imageUrl}}" alt="img_carte"></td>
+      </tr>
+    </tbody>
+  </table>
+  <dir-pagination-controls></dir-pagination-controls>
+</div>
 
 
 

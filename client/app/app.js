@@ -9,6 +9,7 @@ import ngSanitize from 'angular-sanitize';
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
 import 'angular-validation-match';
+import 'angular-utils-pagination';
 
 import {
   routeConfig
@@ -28,7 +29,7 @@ import pokemons from './pokemons/pokemons.service';
 import './app.css';
 
 angular.module('tpPokemonsApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, _Auth,
-  account, admin, 'validation.match', navbar, footer, main, constants, util, pokemons
+  account, admin, 'validation.match', navbar, footer, main, constants, util, pokemons, 'angularUtils.directives.dirPagination'
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
