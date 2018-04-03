@@ -1,0 +1,48 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Liste des cartes Pokémons</h1>
+    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+  </div>
+</header>
+<br>
+<div class="container">
+  <div ng-show="pokemonCtrl.liste">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Type</th>
+          <th>Numéro</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr dir-paginate="pokemon in pokemonCtrl.pokemons_liste | orderBy:'nationalPokedexNumber' | itemsPerPage: 10">
+          <td class="clic" ng-click="pokemonCtrl.showInfos(pokemon)">{{pokemon.name}}</td>
+          <td><p ng-repeat="type in pokemon.types">{{type}}</p></td>
+          <td>{{pokemon.nationalPokedexNumber}}</td>
+          <td><img style="width: 128px;" src="{{pokemon.imageUrl}}" alt="img_carte"></td>
+        </tr>
+      </tbody>
+    </table>
+    <dir-pagination-controls></dir-pagination-controls>
+  </div>
+
+  <div class="container" ng-show="pokemonCtrl.details">
+    <div class="infos col-sm-8" >
+	    <ul ng-repeat="(key, info) in pokemonCtrl.infos">
+	       	<li>{{key}} : {{info}}</li>
+	    </ul>
+    </div>
+    <img class="col-sm-offset-1 col-sm-3" src="{{pokemonCtrl.infos.imageUrl}}" alt="pokemon" style="margin-top: 40px" />
+    <div class='col-sm-12'>
+    	<button class="clic btn btn-primary" ng-click="pokemonCtrl.$onInit()">Retour à la liste</button>
+    </div>
+  </div>
+
+</div>
+<hr>
+
+
+
+

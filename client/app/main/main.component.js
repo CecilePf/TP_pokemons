@@ -7,14 +7,8 @@ export class MainController {
   pokemons_liste = [];
 
   /*@ngInject*/
-  constructor($scope, pokemons) {
-    'ngInject';
-    this.pokemons = pokemons;
-    this.$scope = $scope;
-  }
+  constructor() {
 
-  $onInit() {
-    this.pokemons.query().$promise.then(data => this.pokemons_liste = data);
   }
 
   // addThing() {
@@ -35,7 +29,6 @@ export default angular.module('tpPokemonsApp.main', [uiRouter])
   .config(routing)
   .component('main', {
     template: require('./main.html'),
-    controller: MainController,
-    controllerAs: 'PokCtrl'
+    controller: MainController
   })
   .name;
