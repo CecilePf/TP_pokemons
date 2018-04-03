@@ -20,6 +20,7 @@ var UserSchema = new Schema({
     type: String,
     required: true
   },
+  deck_id: Number,
   provider: String,
   salt: String
 });

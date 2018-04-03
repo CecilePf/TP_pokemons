@@ -1,5 +1,7 @@
 .clic {
   cursor: pointer;
+  font-size: 18px;
+  text-decoration: underline;
 }
 
 .infos {

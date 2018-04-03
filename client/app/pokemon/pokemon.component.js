@@ -8,11 +8,14 @@ import routes from './pokemon.routes';
 export class PokemonComponent {
   pokemons_liste = [];
 
-  /*@ngInject*/
-  constructor($scope, pokemons) {
+  constructor($scope, pokemons, Auth) {
     'ngInject';
     this.pokemons = pokemons;
     this.$scope = $scope;
+    var user = Auth.getCurrentUserSync();
+    console.log(user._id);
+    sessionStorage.setItem("userid",user._id);
+    console.log(sessionStorage);
   }
 
   $onInit() {
@@ -26,6 +29,10 @@ export class PokemonComponent {
     this.liste = false;
     this.details = true;
     this.infos = pokemon;
+  }
+
+  addCollection(pokemon) {
+    console.log(pokemon);
   }
 }
 

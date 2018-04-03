@@ -25,12 +25,13 @@ import constants from './app.constants';
 import util from '../components/util/util.module';
 
 import PokemonComponent from './pokemon/pokemon.component';
+import DeckComponent from './deck/deck.component';
 import pokemons from './pokemons/pokemons.service';
 
 import './app.css';
 
 angular.module('tpPokemonsApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, _Auth,
-  account, admin, 'validation.match', navbar, footer, main, constants, util, pokemons, 'angularUtils.directives.dirPagination', PokemonComponent
+  account, admin, 'validation.match', navbar, footer, main, constants, util, pokemons, 'angularUtils.directives.dirPagination', PokemonComponent, DeckComponent
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {

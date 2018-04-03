@@ -1,7 +1,6 @@
 <header class="hero-unit" id="banner">
   <div class="container">
     <h1>Liste des cartes Pokémons</h1>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
   </div>
 </header>
 <br>
@@ -14,6 +13,7 @@
           <th>Type</th>
           <th>Numéro</th>
           <th>Image</th>
+          <th>Collection</th>
         </tr>
       </thead>
       <tbody>
@@ -22,6 +22,7 @@
           <td><p ng-repeat="type in pokemon.types">{{type}}</p></td>
           <td>{{pokemon.nationalPokedexNumber}}</td>
           <td><img style="width: 128px;" src="{{pokemon.imageUrl}}" alt="img_carte"></td>
+          <td><button class="btn btn-info" ng-click="pokemonCtrl.addCollection(pokemon)">Add in collection</button></td>
         </tr>
       </tbody>
     </table>
@@ -29,6 +30,7 @@
   </div>
 
   <div class="container" ng-show="pokemonCtrl.details">
+  	<h2>{{pokemonCtrl.infos.name}}</h2>
     <div class="infos col-sm-8" >
 	    <ul ng-repeat="(key, info) in pokemonCtrl.infos">
 	       	<li>{{key}} : {{info}}</li>
@@ -36,7 +38,7 @@
     </div>
     <img class="col-sm-offset-1 col-sm-3" src="{{pokemonCtrl.infos.imageUrl}}" alt="pokemon" style="margin-top: 40px" />
     <div class='col-sm-12'>
-    	<button class="clic btn btn-primary" ng-click="pokemonCtrl.$onInit()">Retour à la liste</button>
+    	<button class="btn btn-primary" ng-click="pokemonCtrl.$onInit()">Retour à la liste</button>
     </div>
   </div>
 
