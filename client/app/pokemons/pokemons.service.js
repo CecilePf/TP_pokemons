@@ -5,11 +5,11 @@ import ngResource from 'angular-resource';
 /*@ngInject*/
 export function pokemonsService($resource) {
 	'ngInject';
-	return $resource('/api/pokemonss', { id: '@_id'
+	return $resource('/api/pokemonss/:id', { id: '@id'
 		}, {
-		update: {
-			method: 'PUT'
-		}
+            update: {
+                method: 'PUT'
+            }
 	});
 }
 

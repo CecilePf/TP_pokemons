@@ -4,11 +4,13 @@ import routing from './main.routes';
 
 export class MainController {
 
-  pokemons_liste = [];
-
-  /*@ngInject*/
   constructor() {
-
+    // 'ngInject';
+    // Auth.getCurrentUserSync().$promise.then(function(res) {
+    //   sessionStorage.setItem("userid", res._id);
+    //   var userid = sessionStorage.getItem("userid");
+    //   console.log(userid);
+    // });
   }
 
   // addThing() {

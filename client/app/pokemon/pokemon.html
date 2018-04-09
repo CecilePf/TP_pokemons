@@ -5,7 +5,7 @@
 </header>
 <br>
 <div class="container">
-  <div ng-show="pokemonCtrl.liste">
+  <div>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -18,7 +18,7 @@
       </thead>
       <tbody>
         <tr dir-paginate="pokemon in pokemonCtrl.pokemons_liste | orderBy:'nationalPokedexNumber' | itemsPerPage: 10">
-          <td class="clic" ng-click="pokemonCtrl.showInfos(pokemon)">{{pokemon.name}}</td>
+          <td class="clic" ui-sref="profil({id: pokemon.id})">{{pokemon.name}}</td>
           <td><p ng-repeat="type in pokemon.types">{{type}}</p></td>
           <td>{{pokemon.nationalPokedexNumber}}</td>
           <td><img style="width: 128px;" src="{{pokemon.imageUrl}}" alt="img_carte"></td>
@@ -28,20 +28,6 @@
     </table>
     <dir-pagination-controls></dir-pagination-controls>
   </div>
-
-  <div class="container" ng-show="pokemonCtrl.details">
-  	<h2>{{pokemonCtrl.infos.name}}</h2>
-    <div class="infos col-sm-8" >
-	    <ul ng-repeat="(key, info) in pokemonCtrl.infos">
-	       	<li>{{key}} : {{info}}</li>
-	    </ul>
-    </div>
-    <img class="col-sm-offset-1 col-sm-3" src="{{pokemonCtrl.infos.imageUrl}}" alt="pokemon" style="margin-top: 40px" />
-    <div class='col-sm-12'>
-    	<button class="btn btn-primary" ng-click="pokemonCtrl.$onInit()">Retour à la liste</button>
-    </div>
-  </div>
-
 </div>
 <hr>
 

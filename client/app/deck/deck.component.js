@@ -6,7 +6,6 @@ const uiRouter = require('angular-ui-router');
 import routes from './deck.routes';
 
 export class DeckComponent {
-  /*@ngInject*/
   constructor() {
     this.message = 'Hello';
   }

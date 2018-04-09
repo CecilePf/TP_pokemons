@@ -75,10 +75,17 @@ export function index(req, res) {
 
 // Gets a single Pokemons from the DB
 export function show(req, res) {
+  console.log("je suis dans le show");
   pokemon.card.find(req.params.id)
   .then(result => {
-    res.json(result)
+    console.log(result.card.id);
+    res.json(result.card)
   })
+  // pokemon.card.where({'id' : req.params.id})
+  // .then(result => {
+  //   console.log(result);
+  //   res.json(result)
+  // })
 }
 
 // Creates a new Pokemons in the DB

@@ -12,23 +12,11 @@ export class PokemonComponent {
     'ngInject';
     this.pokemons = pokemons;
     this.$scope = $scope;
-    var user = Auth.getCurrentUserSync();
-    console.log(user._id);
-    sessionStorage.setItem("userid",user._id);
-    console.log(sessionStorage);
+    this.Auth = Auth;
   }
 
   $onInit() {
     this.pokemons.query().$promise.then(data => this.pokemons_liste = data);
-    this.liste = true;
-    this.details = false;
-  }
-
-  showInfos(pokemon) {
-    console.log(pokemon);
-    this.liste = false;
-    this.details = true;
-    this.infos = pokemon;
   }
 
   addCollection(pokemon) {
