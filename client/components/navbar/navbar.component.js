@@ -10,6 +10,9 @@ export class NavbarComponent {
   }, {
     title: 'Cards',
     state: 'pokemon'
+  }, {
+    title: 'Deck',
+    state: 'deck'
   }];
 
   isCollapsed = true;
